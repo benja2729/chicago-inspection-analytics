@@ -1,0 +1,30 @@
+
+<div class="row">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Address</th>
+      </tr>
+    </thead>
+    <tbody>
+    {{#each model as |item|}}
+    <tr>
+      <td>{{item.name}}</td>
+      <td>{{item.type}}</td>
+      <td>
+        <address>
+        {{item.address}}<br />
+        {{item.city}},
+        {{item.state}}<br />
+        {{item.zip}}
+        </address>
+      </td>
+    </tr>
+    {{/each}}
+    </tbody>
+  </table>
+</div>
+{{outlet}}
+
