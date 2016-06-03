@@ -1,0 +1,36 @@
+
+<table class="table table-condensed table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Inspection ID</th>
+      <th>Name</th>
+      <th>License #</th>
+      <th>Facility Type</th>
+      <th>Risk</th>
+      <th>Address</th>
+      <th>Inspection Date</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  {{#each items as |item|}}
+  <tr>
+    <td>{{item.id}}</td>
+    <td>{{item.name}}</td>
+    <td>{{item.license}}</td>
+    <td>{{item.facilityType}}</td>
+    <td>{{item.risk}}</td>
+    <td>
+      <address>
+      {{item.address}}<br />
+      {{item.city}},
+      {{item.state}}<br />
+      {{item.zip}}
+      </address>
+    </td>
+    <td>{{moment-from-now item.date}}</td>
+  </tr>
+  {{/each}}
+  </tbody>
+</table>
+
