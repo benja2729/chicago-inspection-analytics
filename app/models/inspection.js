@@ -2,16 +2,18 @@
 import Model from 'ember-data/model';
 import attr from 'ember-data/attr';
 
+const defaultValue = { defaultValue: 'UNKNOWN' };
+
 export default Model.extend({
-  name:         attr('string'),
-  dbaName:      attr('string'),
+  name:         attr('string', defaultValue),
+  dbaName:      attr('string', defaultValue),
 
   date:         attr('date'),
   type:         attr('string'),
 
-  address:      attr('string'),
-  city:         attr('string'),
-  state:        attr('string'),
+  address:      attr('string', defaultValue),
+  city:         attr('string', defaultValue),
+  state:        attr('string', defaultValue),
   zip:          attr('number'),
 
   facilityType: attr('string'),
