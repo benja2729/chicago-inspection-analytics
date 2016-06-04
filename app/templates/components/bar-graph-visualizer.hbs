@@ -1,0 +1,17 @@
+
+<div class="page-header">
+  <h1>Risk Levels</h1>
+</div>
+
+{{#each riskLevels as |risk|}}
+<dl class="dl-horizontal">
+  <dt>{{risk.title}}</dt>
+  <dd>
+    <div class="progress">
+      <div class="progress-bar" style="width: {{risk.percent}}%;">{{floor risk.percent}}%</div>
+    </div>
+    <p>{{risk.items}} of {{risk.total}}</p>
+  </dd>
+</dl>
+{{/each}}
+
