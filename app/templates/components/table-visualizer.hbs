@@ -2,18 +2,38 @@
 <table class="table table-condensed table-striped table-hover">
   <thead>
     <tr>
-      <th>Inspection ID</th>
-      <th>Name</th>
-      <th>License #</th>
-      <th>Facility Type</th>
-      <th>Risk</th>
-      <th>Address</th>
-      <th>Inspection Date</th>
+      <th {{action "toggleSort" "id"}}>
+        Inspection ID {{sort-icon "id" sorting.firstObject}}
+      </th>
+
+      <th {{action "toggleSort" "name"}}>
+        Name {{sort-icon "name" sorting.firstObject}}
+      </th>
+
+      <th {{action "toggleSort" "license"}}>
+        License # {{sort-icon "license" sorting.firstObject}}
+      </th>
+
+      <th {{action "toggleSort" "facilityType"}}>
+        Facility Type {{sort-icon "facilityType" sorting.firstObject}}
+      </th>
+
+      <th {{action "toggleSort" "risk" "desc"}}>
+        Risk {{sort-icon "risk" sorting.firstObject}}
+      </th>
+
+      <th {{action "toggleSort" "address"}}>
+        Address {{sort-icon "address" sorting.firstObject}}
+      </th>
+
+      <th {{action "toggleSort" "date" "desc"}}>
+        Inspection Date {{sort-icon "date" sorting.firstObject}}
+      </th>
     </tr>
   </thead>
 
   <tbody>
-  {{#each items as |item|}}
+  {{#each displayItems as |item|}}
   <tr>
     <td>{{item.id}}</td>
     <td>{{item.name}}</td>
