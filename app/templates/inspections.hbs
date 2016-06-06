@@ -1,3 +1,18 @@
 
+<ul class="nav nav-tabs" role="tablist">
+  {{#link-to "inspections" (query-params visualize="table") tagName="li" href=false}}
+    {{link-to "Table" "inspections" (query-params visualize="table")}}
+  {{/link-to}}
+
+  {{#link-to "inspections" (query-params visualize="collection") tagName="li" href=false}}
+    {{link-to "Collection" "inspections" (query-params visualize="collection")}}
+  {{/link-to}}
+
+  {{#link-to "inspections" (query-params visualize="bar-graph") tagName="li" href=false}}
+    {{link-to "Bar Graph" "inspections" (query-params visualize="bar-graph")}}
+  {{/link-to}}
+</ul>
+
 {{component visualizerName items=model}}
+
 {{outlet}}

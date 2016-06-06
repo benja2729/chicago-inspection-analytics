@@ -1,20 +1,6 @@
 
 <div class="container">
 
-  <ul class="nav nav-tabs" role="tablist">
-    {{#link-to "inspections" (query-params visualize="table") tagName="li"}}
-      {{#link-to "inspections" (query-params visualize="table")}}
-        Table
-      {{/link-to}}
-    {{/link-to}}
-
-    {{#link-to "inspections" (query-params visualize="bar-graph") tagName="li"}}
-      {{#link-to "inspections" (query-params visualize="bar-graph")}}
-        Bar Graph
-      {{/link-to}}
-    {{/link-to}}
-  </ul>
-
   {{outlet}}
 </div>
 

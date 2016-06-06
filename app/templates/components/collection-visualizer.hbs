@@ -1,0 +1,56 @@
+
+{{!--
+<thead>
+  <tr>
+    <th {{action "toggleSort" "id"}}>
+      Inspection ID {{sort-icon "id" sorting.firstObject}}
+    </th>
+
+    <th {{action "toggleSort" "name"}}>
+      Name {{sort-icon "name" sorting.firstObject}}
+    </th>
+
+    <th {{action "toggleSort" "license"}}>
+      License # {{sort-icon "license" sorting.firstObject}}
+    </th>
+
+    <th {{action "toggleSort" "facilityType"}}>
+      Facility Type {{sort-icon "facilityType" sorting.firstObject}}
+    </th>
+
+    <th {{action "toggleSort" "risk" "desc"}}>
+      Risk {{sort-icon "risk" sorting.firstObject}}
+    </th>
+
+    <th {{action "toggleSort" "address"}}>
+      Address {{sort-icon "address" sorting.firstObject}}
+    </th>
+
+    <th {{action "toggleSort" "date" "desc"}}>
+      Inspection Date {{sort-icon "date" sorting.firstObject}}
+    </th>
+  </tr>
+</thead>
+--}}
+
+<div style={{concat "position:relative;height:" parentHeight "px"}}>
+  {{#ember-collection items=displayItems cell-layout=(fixed-grid-layout itemWidth itemHeight) as |item|}}
+    <div class="row">
+      <div class="col-lg-1">{{item.id}}</div>
+      <div class="col-lg-3">{{item.name}}</div>
+      <div class="col-lg-1">{{item.license}}</div>
+      <div class="col-lg-1">{{item.facilityType}}</div>
+      <div class="col-lg-2">{{item.risk}}</div>
+      <div class="col-lg-3">
+        <address>
+        {{item.address}}<br />
+        {{item.city}},
+        {{item.state}}<br />
+        {{item.zip}}
+        </address>
+      </div>
+      <div class="col-lg-1">{{moment-from-now item.date}}</div>
+    </div>
+  {{/ember-collection}}
+</div>
+
