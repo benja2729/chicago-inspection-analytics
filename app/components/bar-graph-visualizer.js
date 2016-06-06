@@ -22,7 +22,7 @@ export default Ember.Component.extend({
 
         riskLevels.pushObject(riskLevel);
       } else {
-        riskLevel.items++
+        riskLevel.items++;
       }
     });
 
